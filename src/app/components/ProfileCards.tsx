@@ -13,21 +13,30 @@ interface ProfileCardProps {
 
 export function ProfileCards(props: ProfileCardProps) {
     const [following, setFollowing] = useState(false);
+    const [followers, setFollowers] = useState(0);
 
     return (
-        <Card>
-            <CardHeader>
-                <CardDescription>{props.title}</CardDescription>
-                <CardTitle>{props.name}</CardTitle>
-                
-            </CardHeader>
+        <div className='flex items-center justify-center min-h-screen w-full'>
+            <Card className='w-80 mx-auto flex'>
+                <CardHeader className='flex justify-between items-center' >
+                    <div>
+                        <CardDescription>{props.title}</CardDescription>
+                        <CardTitle>{props.name}</CardTitle>
+                    </div>
 
-            <CardContent>
-                <Image avatarUrl={props.avatarUrl}></Image>
-                <footer>
-                    <Button onClick={() => setFollowing(!following)}>{following ? 'Unfollow' : 'Follow'}</Button>
-                </footer>
-            </CardContent>
-        </Card>
+                    <div>Followers: {followers}</div>
+                    
+                    
+                </CardHeader>
+
+                <CardContent className='flex flex-col gap-4'>
+                    <Image avatarUrl={props.avatarUrl}></Image>
+                    <footer className='w-full flex justify-center'>
+                        <Button onClick={() => { setFollowing(!following); setFollowers(following ? followers - 1 : followers + 1)}}>{following ? 'Unfollow' : 'Follow'}</Button>
+                    </footer>
+                </CardContent>
+            </Card>
+        </div>
+        
     )
 }
