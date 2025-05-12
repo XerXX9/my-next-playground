@@ -6,8 +6,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <ProfileCards name={"Scott"} title="Mr." avatarUrl="https://pbs.twimg.com/profile_images/634514155261833216/czgYrPLQ_200x200.jpg" ></ProfileCards>
+      <ProfileCards name={"Scott"} title="Mr." avatarUrl="https://i1.sndcdn.com/artworks-jyHrY6dZr8FC-0-t500x500.jpg" ></ProfileCards>
     </>
     
   );
 }
+ 
